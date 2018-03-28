@@ -240,7 +240,7 @@ class PoCompiler:
         for mdfn in sorted(mdlist.keys()):
             mdfo = mdlist.get(mdfn)
             tpath = os.path.join(self.outputdir, self.clocale,
-                                      mdfn.split(os.sep)[0])
+                                 os.path.dirname(mdfn))
             if not os.path.exists(tpath) and '/' in mdfn:
                 os.makedirs(tpath, 0o755)
 
