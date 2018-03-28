@@ -50,7 +50,7 @@ class PFMMain:
 
         for dirn in dirs:
             if os.path.isdir(dirn):
-                mdfiles = glob.glob(os.path.join(self.cwd, dirn, '*.md'))
+                mdfiles = glob.glob(os.path.join(self.cwd, dirn, '**', '*.md'), recursive=True)
                 mdfiles.sort()
 
                 for mdfile in mdfiles:
