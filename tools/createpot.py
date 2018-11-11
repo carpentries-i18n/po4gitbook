@@ -49,7 +49,9 @@ class PFMMain:
         dirs.sort()
 
         for dirn in dirs:
-            if os.path.isdir(dirn):
+
+            #  Omit the `locale` directory as it's there where the output is saved
+            if os.path.isdir(dirn) and dirn != 'locale':
                 mdfiles = glob.glob(os.path.join(self.cwd, dirn, '**', '*.md'), recursive=True)
                 mdfiles.sort()
 
