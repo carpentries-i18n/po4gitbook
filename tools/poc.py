@@ -107,7 +107,7 @@ class PoCompiler:
                     self.last_trans_name.append(poline.split('<')[0].strip())
                     self.last_trans_email.append(
                         poline.split('<')[1].split('>')[0])
-                    years = poline[:-1].split('>')[1].split(', ')[1]
+                    years = poline[:-1].split('>')[1].split(', ')[-1]
                     if '-' in years:
                         years = years.split('-')[1]
                     self.last_trans_year.append(years)
